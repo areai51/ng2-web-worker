@@ -1,0 +1,16 @@
+
+<h2>Generating table</h2>
+<table class="sticky-header">
+  <thead>
+    <tr>
+      <th>Number</th>
+      <th>Largest Prime Factor</th>
+    </tr>
+  </thead>
+  <tbody (scroll)="generateData()">
+    <tr *ngFor="let item of items">
+      <td>{{item.num}}</td>
+      <td>{{item.factor}}</td>
+    </tr>
+  </tbody>
+</table>
