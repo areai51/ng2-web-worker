@@ -9,20 +9,20 @@ const MAX_ITEMS = 1000000000;
 })
 export class TableDemoComponent implements OnInit {
 
-lastNum = Math.pow(2, 25);
+  lastNum = Math.pow(2, 25);
   items: Array<DataRow> = [];
 
-  constructor() { 
-     console.log('num', this.lastNum);
-   
+  constructor() {
+    console.log('num', this.lastNum);
+
   }
 
-    public generateData(): void {
+  public generateData(): void {
     console.log("Generating data");
     if (this.items.length > MAX_ITEMS) {
       return;
     }
-    for (let i = 0; i < NUM_ITEMS_PER_ROUND; i++){
+    for (let i = 0; i < NUM_ITEMS_PER_ROUND; i++) {
       let num = this.lastNum * 1.05;
       let factor = this._findLargestPrimeFactor(num);
       this.items.push({
@@ -34,7 +34,7 @@ lastNum = Math.pow(2, 25);
     }
   }
 
-    private _findFactors(num: number): Array<number> {
+  private _findFactors(num: number): Array<number> {
     let factors = [];
     for (let i = 1; i < Math.sqrt(num); i++) {
       if (num % i === 0) {
@@ -57,8 +57,9 @@ lastNum = Math.pow(2, 25);
     let primeFactors = factors.filter((num: number) => this._isPrime(num));
     return primeFactors[primeFactors.length - 1];
   }
+
   ngOnInit() {
-     this.generateData();
+    this.generateData();
   }
 
 }

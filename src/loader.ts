@@ -6,5 +6,3 @@ importScripts(
   "../node_modules/reflect-metadata/Reflect.js",
   "./config.js");
 
-
-import from "./src/app/app.module";
